@@ -12,7 +12,6 @@
         android:supportsRtl="true"
         android:name=".MyApplication"
         android:theme="@style/Theme.DannvGithub"
-        android:allowClearUserData="true"
         tools:targetApi="31">
         <activity
             android:name=".MainActivity"

@@ -3,6 +3,7 @@ package com.example.example
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.example.dannvgithub.database.RoomDatabaseUser
 import com.google.gson.annotations.SerializedName
 
 data class GitHubUserListResponse (
@@ -25,3 +26,9 @@ data class GitHubUserListResponse (
   @SerializedName("type"                ) var type              : String?  = null,
   @SerializedName("site_admin"          ) var siteAdmin         : Boolean? = null
 )
+
+fun GitHubUserListResponse.toRoomObject(): RoomDatabaseUser {
+  return RoomDatabaseUser(
+    login, id, nodeId, avatarUrl, gravatarId, url, htmlUrl, followersUrl, followingUrl, gistsUrl, starredUrl, subscriptionsUrl, organizationsUrl, reposUrl, eventsUrl, receivedEventsUrl, type, siteAdmin
+  )
+}

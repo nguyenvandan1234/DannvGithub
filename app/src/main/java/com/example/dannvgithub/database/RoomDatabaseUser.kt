@@ -2,6 +2,7 @@ package com.example.dannvgithub.database
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.example.example.GitHubUserListResponse
 import com.google.gson.annotations.SerializedName
 
 @Entity
@@ -26,3 +27,8 @@ data class RoomDatabaseUser(
     var type: String? = null,
     var siteAdmin: Boolean? = null
 )
+
+fun RoomDatabaseUser.convertToGithubUser(): GitHubUserListResponse {
+    return GitHubUserListResponse(login, id, nodeId, avatarUrl, gravatarId, url, htmlUrl, followersUrl, followingUrl, gistsUrl, starredUrl, subscriptionsUrl, organizationsUrl, reposUrl,
+    eventsUrl, receivedEventsUrl, type, siteAdmin)
+}
