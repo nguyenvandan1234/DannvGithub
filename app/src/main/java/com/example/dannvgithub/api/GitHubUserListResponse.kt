@@ -1,7 +1,9 @@
 package com.example.example
 
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
-
 
 data class GitHubUserListResponse (
   @SerializedName("login"               ) var login             : String?  = null,
@@ -22,5 +24,4 @@ data class GitHubUserListResponse (
   @SerializedName("received_events_url" ) var receivedEventsUrl : String?  = null,
   @SerializedName("type"                ) var type              : String?  = null,
   @SerializedName("site_admin"          ) var siteAdmin         : Boolean? = null
-
 )
